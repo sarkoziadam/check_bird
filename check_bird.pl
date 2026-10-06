@@ -62,7 +62,7 @@ if ( $plugin->opts->peer =~ /(^[\w\-]+$)/) {
         print "DEBUG in the peer if : $peer[2]\n" if $plugin->opts->debug;
 	# NOS_ipv4   BGP        ---        up     2020-09-22    Established
 	# PCH1_2001_7f8_a_1__55 BGP        ---        down   11:21:54.010
-        if ($peer[2] =~ m/^[\w\-]+\s+BGP\s+---\s+(\w+)\s+([\d\-\.\:]+)(.*)/) {
+        if ($peer[2] =~ m/^[\w\-]+\s+BGP\s+(?:---|master)\s+(\w+)\s+([\d\-\.\:]+)(.*)/) {
             $status = $1;
             $since = $2;
             my $tail = $3;
